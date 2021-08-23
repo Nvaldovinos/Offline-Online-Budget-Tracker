@@ -12,7 +12,6 @@ const FILES_TO_CACHE = [
 const PRECACHE = "precache-v1";
 const RUNTIME = "runtime";
 
-//add evenlistener using self keyword.
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -23,7 +22,6 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// The activate handler takes care of cleaning up old caches.
 self.addEventListener("activate", (event) => {
   const currentCaches = [PRECACHE, RUNTIME];
   event.waitUntil(
