@@ -15,10 +15,15 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://rm55ilyuh:Rm55ilyuh@cluster0.4zq9f.mongodb.net/tracker?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect(
+  "mongodb+srv://rm55ilyuh:Rm55ilyuh@cluster0.4zq9f.mongodb.net/tracker?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 // routes
 app.use(require("./routes/api.js"));
